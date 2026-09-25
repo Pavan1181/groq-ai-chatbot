@@ -8,11 +8,11 @@ client = Groq(
     api_key=os.environ.get("GROQ_API_KEY")
 )
 
-@app.route("/", methods=["GET"])
+@app.route("/api", methods=["GET"])
 def home():
     return "Groq AI Chatbot is running!"
 
-@app.route("/chat", methods=["POST"])
+@app.route("/api/chat", methods=["POST"])
 def chat():
     data = request.get_json()
     user_message = data.get("message", "")
